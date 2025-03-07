@@ -34,102 +34,73 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         TimDieuKhien();
+        // Gắn bộ lắng nghe sự kiện và code xử lý cho từng nút
+        View.OnClickListener boLangNgheCong = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // GỌi hàm xử lý cộng
+                XULY_CONG();
+            }
+        };
+        nutCong.setOnClickListener(boLangNgheCong);
+
+        nutTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_TRU();
+            }
+        });
+
+        nutNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_NHAN();
+            }
+        });
+
+        nutChia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XULY_CHIA();
+            }
+        });
     }
 
-    //Xu ly cong
-    void XuLyCong(View v) {
-        //Code xử lý cộng ở đây
-        //b1. Lấy dữ liệu 2 số
-        // b1.1 tìm editText số 1 và số 2
-        // b1.2 lấy dữ liệu từ 2 đkhiển đó
-
-    String soThu1= editTextSo1.getText().toString();
-        String soThu2= editTextSo2.getText().toString();
-        //b1.3 chuyển dữ liệu từ chuỗi sang số
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        // b2 Tính toán
-        float Tong = soA + soB;
-        //b3 hiện kết quả
-        //b3.1
-        // b3.2 chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-        String chuoiKQ = String.valueOf(Tong);
-        //b3.3 gán kết quả lên đk
+    void XULY_CONG() {
+        // Lấy dữ liệu
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 + num2;
+        String chuoiKQ = String.valueOf(tong);
         editTextKQ.setText(chuoiKQ);
-
     }
-    //Xu ly tru
-    void XuLyTru(View v) {
-        //Code xử lý cộng ở đây
-        //b1. Lấy dữ liệu 2 số
-        // b1.1 tìm editText số 1 và số 2
-
-        // b1.2 lấy dữ liệu từ 2 đkhiển đó
-
-        String soThu1= editTextSo1.getText().toString();
-        String soThu2= editTextSo2.getText().toString();
-        //b1.3 chuyển dữ liệu từ chuỗi sang số
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        // b2 Tính toán
-        float Tong = soA - soB;
-        //b3 hiện kết quả
-        //b3.1
-
-        // b3.2 chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-        String chuoiKQ = String.valueOf(Tong);
-        //b3.3 gán kết quả lên đk
+    void XULY_TRU(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 - num2;
+        String chuoiKQ = String.valueOf(tong);
         editTextKQ.setText(chuoiKQ);
-
     }
-    //Xu ly nhan
-    void XuLyNhan(View v) {
-        //Code xử lý cộng ở đây
-        //b1. Lấy dữ liệu 2 số
-        // b1.1 tìm editText số 1 và số 2
-
-        // b1.2 lấy dữ liệu từ 2 đkhiển đó
-
-        String soThu1= editTextSo1.getText().toString();
-        String soThu2= editTextSo2.getText().toString();
-        //b1.3 chuyển dữ liệu từ chuỗi sang số
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        // b2 Tính toán
-        float Tong = soA * soB;
-        //b3 hiện kết quả
-        //b3.1
-
-        // b3.2 chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-        String chuoiKQ = String.valueOf(Tong);
-        //b3.3 gán kết quả lên đk
+    void XULY_NHAN(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 * num2;
+        String chuoiKQ = String.valueOf(tong);
         editTextKQ.setText(chuoiKQ);
-
-
     }
-    //Xu ly chia
-    void XuLyChia(View v) {
-        //Code xử lý cộng ở đây
-        //b1. Lấy dữ liệu 2 số
-        // b1.1 tìm editText số 1 và số 2
-
-        // b1.2 lấy dữ liệu từ 2 đkhiển đó
-
-        String soThu1= editTextSo1.getText().toString();
-        String soThu2= editTextSo2.getText().toString();
-        //b1.3 chuyển dữ liệu từ chuỗi sang số
-        float soA = Float.parseFloat(soThu1);
-        float soB = Float.parseFloat(soThu2);
-        // b2 Tính toán
-        float Tong = soA / soB;
-        //b3 hiện kết quả
-        //b3.1
-
-        // b3.2 chuẩn bị dữ liệu xuất, biến thành dạng chuỗi
-        String chuoiKQ = String.valueOf(Tong);
-        //b3.3 gán kết quả lên đk
+    void XULY_CHIA(){
+        String so1 = editTextSo1.getText().toString();
+        String so2 = editTextSo2.getText().toString();
+        float num1 = Float.parseFloat(so1);
+        float num2 = Float.parseFloat(so2);
+        float tong = num1 / num2;
+        String chuoiKQ = String.valueOf(tong);
         editTextKQ.setText(chuoiKQ);
-
-
     }
 }
