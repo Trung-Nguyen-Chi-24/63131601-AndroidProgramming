@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Xử lý chuyển màn hình
                 // B1. Tạo một Intent 2 tham số : 1) màn hình hiện tại .this 2) mà hình chuyển tới .class
-                Intent intentMH3 = new Intent(MainActivity.this, MH3Activity.class);
+                Intent intentMH3 = new Intent(MainActivity.this, MH3Activity2.class);
                 //B2. Gửi
                 startActivity(intentMH3);
             }
