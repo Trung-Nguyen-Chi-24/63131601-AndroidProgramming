@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#FFFFFF">
-
+    tools:context=".Page2Activity">
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="0dp"
@@ -20,30 +17,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Math is Fun!"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="#8BC34A"
-        android:textSize="35dp"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="265dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Math is Fun!"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#8BC34A"
+            android:textSize="35dp"
+            tools:layout_editor_absoluteX="105dp"
+            tools:layout_editor_absoluteY="265dp" />
 
     </LinearLayout>
 
-
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="6dp"
-        android:background="#F2754F"
-        android:src="@drawable/homene"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <TextView
         android:id="@+id/textView3"
@@ -52,50 +39,41 @@
         android:layout_marginStart="129dp"
         android:layout_marginTop="78dp"
         android:gravity="center"
-        android:text="Hello Manu"
-        android:textSize="30dp"
+        android:text="Modes"
+        android:textStyle="bold"
+        android:textColor="#8BC34A"
+        android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:gravity="center"
-        android:text="Select Language"
-        android:textColor="#8BC34A"
-        android:textSize="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/btn123"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="79dp"
         android:layout_marginEnd="56dp"
         android:backgroundTint="#C8F7C5"
-        android:text="English"
+        android:text="123\n\nCount"
         android:textColor="#228B22"
         android:textSize="30dp"
         app:layout_constraintEnd_toStartOf="@+id/btnMatch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/btnMatch"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="153dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="79dp"
         android:backgroundTint="#B3E5FC"
-        android:text="ಕನ್ನಡ"
+        android:drawableTop="@drawable/noi"
+        android:text="Match"
         android:textColor="#0277BD"
         android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/btn123"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/btnpattern"
@@ -105,9 +83,9 @@
         android:layout_marginTop="38dp"
         android:layout_marginEnd="56dp"
         android:backgroundTint="#F8BBD0"
-        android:text="मराठी "
+        android:text="1\n22\n333\npattern"
         android:textColor="#B71C1C"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintEnd_toStartOf="@+id/btnSettings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn123" />
@@ -116,19 +94,15 @@
         android:id="@+id/btnSettings"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="43dp"
         android:backgroundTint="#FFF9C4"
-        android:text="हिन्दी"
+        android:drawableTop="@drawable/setting"
         android:textColor="#E6A800"
-        android:textSize="30dp"
+        android:text="Setting"
+        android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/btnpattern"
         app:layout_constraintTop_toBottomOf="@+id/btnMatch" />
 
 
-
-
-
-
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>
