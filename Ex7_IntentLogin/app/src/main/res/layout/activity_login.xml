@@ -27,6 +27,7 @@
             android:text="User name:"/>
         <EditText
             android:id="@+id/edtUsername"
+            android:hint="Nhap tk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -44,6 +45,7 @@
             android:id="@+id/edtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Nhap mk"
             android:inputType="textPassword"/>
     </LinearLayout>
     <Button
