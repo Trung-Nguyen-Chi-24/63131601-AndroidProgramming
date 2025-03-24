@@ -8,8 +8,12 @@
     tools:context=".MainActivity">
 
     <ListView
+        android:id="@+id/lvNNLT"
+        android:background="#FFEB3B"
         android:layout_width="409dp"
         android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="49dp" />
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

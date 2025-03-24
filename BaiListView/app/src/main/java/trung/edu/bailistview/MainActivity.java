@@ -16,34 +16,45 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-ListView listViewNNLT;
-ArrayList<String> dsNgonNguLT;
+    ListView listViewNNLT;
+    ArrayList<String> dsNgonNguLT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        listViewNNLT = findViewById(R.id.lvNNLT);
 
-        dsNgonNguLT = new ArrayList<String>();
+        listViewNNLT = (ListView) findViewById(R.id.lvNNLT);
+
+        // Thêm dữ liệu vào danh sách
+        dsNgonNguLT = new ArrayList<>();
         dsNgonNguLT.add("Python");
-        dsNgonNguLT.add("Php");
+        dsNgonNguLT.add("PHP");
         dsNgonNguLT.add("Java");
-        ArrayAdapter<String> adapterNNLT;
-        adapterNNLT = new ArrayAdapter<String>( this,
-                                            android.R.layout.simple_dropdown_item_1line
-                                            dsNgonNguLT
+
+        // Tạo Adapter và gán vào ListView
+        ArrayAdapter<String> adapterNNLT = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1, // Sửa lại loại layout cho ListView
+                dsNgonNguLT
         );
+
         listViewNNLT.setAdapter(adapterNNLT);
-        listViewNNLT.setOnClickListener(new AdapterView.OnItemClickListener());
-        @Override
-                public void onItemClick(AdapterView<?> parent, View view, int);
-        String giaTriDuocChon = dsNgonNguLT.get(position);
-        Toast.makeText(MainActivity.this, giaTriDuocChon)
+
+        // Bắt sự kiện chọn item trong ListView
+        listViewNNLT.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String giaTriDuocChon = dsNgonNguLT.get(position);
+                Toast.makeText(MainActivity.this, "giaTriDuocChon", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
