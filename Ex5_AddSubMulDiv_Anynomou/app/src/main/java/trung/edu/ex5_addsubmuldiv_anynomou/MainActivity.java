@@ -13,7 +13,7 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-    // khai báo các đối tượng gắn với điều khiển tương ứng ở đây
+
     EditText editTextSo1;
     EditText editTextSo2;
     EditText editTextKQ;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener boLangNgheCong = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // GỌi hàm xử lý cộng
+
                 XULY_CONG();
             }
         };
