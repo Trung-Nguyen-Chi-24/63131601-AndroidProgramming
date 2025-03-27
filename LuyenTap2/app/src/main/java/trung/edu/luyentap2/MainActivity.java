@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
        Button nutso1 = findViewById(R.id.btncau1);
         Button nutso2 = findViewById(R.id.btncau2);
+        Button nutso4 = findViewById(R.id.btncau4);
 
 
         // Bắt sự kiện click
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         nutso2.setOnClickListener(v -> {
             Intent page2 = new Intent(MainActivity.this, activityCau2.class);
             startActivity(page2);
+        });
+        nutso4.setOnClickListener(v -> {
+            Intent page4 = new Intent(MainActivity.this, activityCau4.class);
+            startActivity(page4);
         });
     }
 }
