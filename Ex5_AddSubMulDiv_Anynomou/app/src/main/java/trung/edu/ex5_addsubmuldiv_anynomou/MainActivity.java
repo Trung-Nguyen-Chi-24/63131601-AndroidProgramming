@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         TimDieuKhien();
-        // Gắn bộ lắng nghe sự kiện và code xử lý cho từng nút
+
         View.OnClickListener boLangNgheCong = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         nutCong.setOnClickListener(boLangNgheCong);
-
         nutTru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void XULY_CONG() {
-        // Lấy dữ liệu
         String so1 = editTextSo1.getText().toString();
         String so2 = editTextSo2.getText().toString();
         float num1 = Float.parseFloat(so1);
