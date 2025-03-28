@@ -25,21 +25,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         listViewNNLT = (ListView) findViewById(R.id.lvNNLT);
 
-        // Thêm dữ liệu vào danh sách
         dsNgonNguLT = new ArrayList<>();
         dsNgonNguLT.add("Python");
         dsNgonNguLT.add("PHP");
         dsNgonNguLT.add("Java");
+        dsNgonNguLT.add("C");
+        dsNgonNguLT.add("C++");
 
-        // Tạo Adapter và gán vào ListView
         ArrayAdapter<String> adapterNNLT = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1, // Sửa lại loại layout cho ListView
@@ -48,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         listViewNNLT.setAdapter(adapterNNLT);
 
-        // Bắt sự kiện chọn item trong ListView
         listViewNNLT.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

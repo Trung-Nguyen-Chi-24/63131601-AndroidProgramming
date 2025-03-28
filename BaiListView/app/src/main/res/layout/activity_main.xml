@@ -9,7 +9,7 @@
 
     <ListView
         android:id="@+id/lvNNLT"
-        android:background="#FFEB3B"
+        android:background="#00BCD4"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginStart="1dp"
