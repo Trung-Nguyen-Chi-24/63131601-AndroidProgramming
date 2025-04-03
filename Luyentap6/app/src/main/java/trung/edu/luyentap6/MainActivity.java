@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Item("Toi","toinc@gmail.com",R.drawable.anhchandung));
         items.add(new Item("Hung","hungnguyenchi@gmail.com",R.drawable.anhchandung));
 
-        
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
     }
