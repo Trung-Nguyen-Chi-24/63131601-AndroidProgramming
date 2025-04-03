@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7C5858"
+    tools:context=".Activitycau1">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="14dp"
+        android:text="Số thứ 1"
+        android:textColor="#FFEB3B"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/edtSo1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtSo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="87dp"
+        android:ems="10"
+        android:hint="Nhập số thứ nhất"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="44dp"
+        android:text="Số thứ 2"
+        android:textColor="#FFEB3B"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edtSo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Nhập số thứ hai"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/edtSo1" />
+
+    <Button
+        android:id="@+id/btntinhtong"
+        android:layout_width="88dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="Tinhtong"
+        android:text="+"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="20dp"
+        android:text="Kết quả"
+        android:textColor="#FFEB3B"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/edtKQ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btntinhtong" />
+
+    <EditText
+        android:id="@+id/edtKQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="Kết quả hiện ở đây"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btntinhtong" />
+
+    <Button
+        android:id="@+id/btntru"
+        android:layout_width="86dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="Pheptru"
+        android:text="-"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btntinhtong"
+        app:layout_constraintTop_toBottomOf="@+id/edtSo2" />
+
+    <Button
+        android:id="@+id/btnnhan"
+        android:layout_width="95dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="49dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="Phepnhan"
+        android:text="*"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btntru"
+        app:layout_constraintTop_toBottomOf="@+id/edtSo2" />
+
+    <Button
+        android:id="@+id/btnchia"
+        android:layout_width="96dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="Phepchia"
+        android:text="/"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btnnhan"
+        app:layout_constraintTop_toBottomOf="@+id/edtSo2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
