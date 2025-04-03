@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
+    android:background="#3B73FF"
     tools:context=".MainActivity">
 
 
@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="73dp"
         android:layout_marginTop="271dp"
-        android:backgroundTint="#03F4D4"
+        android:backgroundTint="#F4032F"
         android:text="Câu 1"
-        android:textColor="@color/black"
+        android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="272dp"
-        android:backgroundTint="#03F4D4"
+        android:backgroundTint="#F4032F"
         android:text="Câu 2"
-        android:textColor="@color/black"
+        android:textColor="#009688"
         app:layout_constraintStart_toEndOf="@+id/btncau1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,9 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginTop="59dp"
-        android:backgroundTint="#03F4D4"
+        android:backgroundTint="#F4032F"
         android:text="Câu 3"
-        android:textColor="@color/black"
+        android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btncau1" />
 
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
         android:layout_marginTop="58dp"
-        android:backgroundTint="#03F4D4"
+        android:backgroundTint="#F4032F"
         android:text="Câu 4"
-        android:textColor="@color/black"
+        android:textColor="#009688"
         app:layout_constraintStart_toEndOf="@+id/btncau3"
         app:layout_constraintTop_toBottomOf="@+id/btncau2" />
 

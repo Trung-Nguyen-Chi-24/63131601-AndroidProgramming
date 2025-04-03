@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LuyenTap4"
         tools:targetApi="31">
         <activity
+            android:name=".Activitycau3"
+            android:exported="false" />
+        <activity
             android:name=".Activitycau4"
             android:exported="false" />
         <activity

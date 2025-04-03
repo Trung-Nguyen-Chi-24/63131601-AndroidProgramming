@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
             Intent page1 = new Intent(MainActivity.this, Activitycau1.class);
             startActivity(page1);
         });
-
         nutso2.setOnClickListener(v -> {
             Intent page2 = new Intent(MainActivity.this, Activitycau2.class);
             startActivity(page2);
