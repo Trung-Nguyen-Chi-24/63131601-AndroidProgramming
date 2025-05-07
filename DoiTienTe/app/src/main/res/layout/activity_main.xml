@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:text="Chọn quốc gia"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="30dp"
             android:textColor="#000"
             android:layout_marginBottom="16dp" />
 
@@ -60,6 +60,7 @@
             android:adjustViewBounds="true"
             android:background="@null"
             android:layout_marginBottom="12dp" />
+
         
     </LinearLayout>
 
