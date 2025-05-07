@@ -49,9 +49,9 @@ public class TienteActivity extends AppCompatActivity {
             etInput.setText("");
             etOutput.setText("");
             if (isForward) {
-                btnSwap.setText("VND ➔ Ngoại tệ");
+                btnSwap.setText("VND - Ngoại tệ");
             } else {
-                btnSwap.setText("Ngoại tệ ➔ VND");
+                btnSwap.setText("Ngoại tệ - VND");
             }
         });
 
