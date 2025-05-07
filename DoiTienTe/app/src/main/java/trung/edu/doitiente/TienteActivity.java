@@ -16,14 +16,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.Path;
 
 public class TienteActivity extends AppCompatActivity {
     EditText etInput, etOutput;
     GridLayout gridLayout;
     Button btnSwap;
     String country;
-    double rate ;
+    double rate = 1;
     boolean isForward = true;
 
     @Override
@@ -39,8 +39,8 @@ public class TienteActivity extends AppCompatActivity {
         btnSwap = findViewById(R.id.btnSwap);
 
         country = getIntent().getStringExtra("country");
-        setToolbar(country);
-        fetchExchangeRate();  // gọi API lấy tỷ giá
+        setToolbar(country);  // chỉ set Toolbar
+        fetchExchangeRate();  // fetch online tỷ giá
 
         createNumberPad();
 
@@ -63,19 +63,19 @@ public class TienteActivity extends AppCompatActivity {
 
         switch (country) {
             case "My":
-                toolbar.setTitle("Chuyển đổi VND ↔ USD");
+                toolbar.setTitle("Chuyển đổi VND - USD");
                 toolbar.setNavigationIcon(R.drawable.co_us);
                 break;
             case "China":
-                toolbar.setTitle("Chuyển đổi VND ↔ CNY");
+                toolbar.setTitle("Chuyển đổi VND - CNY");
                 toolbar.setNavigationIcon(R.drawable.co_china);
                 break;
             case "Korea":
-                toolbar.setTitle("Chuyển đổi VND ↔ KRW");
+                toolbar.setTitle("Chuyển đổi VND - KRW");
                 toolbar.setNavigationIcon(R.drawable.co_korean);
                 break;
             case "UK":
-                toolbar.setTitle("Chuyển đổi VND ↔ GBP");
+                toolbar.setTitle("Chuyển đổi VND - GBP");
                 toolbar.setNavigationIcon(R.drawable.co_uk);
                 break;
             default:
@@ -132,7 +132,7 @@ public class TienteActivity extends AppCompatActivity {
 
     private void fetchExchangeRate() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.exchangerate.host/")
+                .baseUrl("https://api.exchangerate-api.com/v4/") //
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -145,30 +145,23 @@ public class TienteActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     Map<String, Double> ratesMap = response.body().rates;
 
-                    String currencyCode = "";
+                    // Lấy rate theo country
                     switch (country) {
-                        case "My":
-                            currencyCode = "USD";
+                        case "US":
+                            rate = ratesMap.get("USD");
                             break;
                         case "China":
-                            currencyCode = "CNY";
+                            rate = ratesMap.get("CNY");
                             break;
                         case "Korea":
-                            currencyCode = "KRW";
+                            rate = ratesMap.get("KRW");
                             break;
                         case "UK":
-                            currencyCode = "GBP";
+                            rate = ratesMap.get("GBP");
                             break;
                     }
 
-                    Double fetchedRate = ratesMap.get(currencyCode);
-
-                    if (fetchedRate != null) {
-                        rate = fetchedRate;
-                        Toast.makeText(TienteActivity.this, "Tỉ giá đã cập nhật: " + rate, Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(TienteActivity.this, "Không tìm thấy tỷ giá cho " + currencyCode, Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(TienteActivity.this, "Tỉ giá đã cập nhật: " + rate, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(TienteActivity.this, "Không lấy được tỉ giá.", Toast.LENGTH_SHORT).show();
                 }
@@ -179,13 +172,12 @@ public class TienteActivity extends AppCompatActivity {
                 Toast.makeText(TienteActivity.this, "Lỗi mạng: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     // Interface cho Retrofit
     public interface APIcuatoi {
-        @GET("latest")
-        Call<Tygia> getRates(@Query("base") String base);
+        @GET("latest/{base}")
+        Call<Tygia> getRates(@Path("base") String base);
     }
 
     // Model response cho tỷ giá
