@@ -1,5 +1,7 @@
 package trung.edu.doitiente;
 
+import static android.content.Intent.getIntent;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,7 +64,7 @@ public class TienteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         switch (country) {
-            case "My":
+            case "US":
                 toolbar.setTitle("Chuyển đổi VND - USD");
                 toolbar.setNavigationIcon(R.drawable.co_us);
                 break;
@@ -128,7 +130,7 @@ public class TienteActivity extends AppCompatActivity {
         }
     }
 
-    // ========= Retrofit API ===========
+    // ========= Retrofit API ==========
 
     private void fetchExchangeRate() {
         Retrofit retrofit = new Retrofit.Builder()
